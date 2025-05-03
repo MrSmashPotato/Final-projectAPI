@@ -1,6 +1,0 @@
-fastapi
-uvicorn
-tensorflow
-opencv-python
-numpy
-gdown
