@@ -16,7 +16,7 @@ import tempfile
 app = FastAPI()
 
 # Google Drive file ID for the Keras model
-MODEL_FILE_ID = 'https://drive.google.com/uc?id1CkEfmk8hODpTpU5D4CWNJUDU7Wb3soGF'  # Replace this with the actual file ID from Google Drive
+MODEL_FILE_ID = '1CkEfmk8hODpTpU5D4CWNJUDU7Wb3soGF'  # Replace this with the actual file ID from Google Drive
 MODEL_PATH = 'building_dualchannel_model.keras'
 
 # Download the Keras model from Google Drive
