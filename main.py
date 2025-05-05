@@ -43,7 +43,15 @@ async def load_model_and_classes():
             status_code=500,
             detail=f"Model loading failed: {str(e)}"
         )
+        
+@app.get("/")
+def home():
+    return {"message": "Hello from Railway"}
 
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
 @app.get("/health")
 async def health_check():
     """Health check endpoint"""
