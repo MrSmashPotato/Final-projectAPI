@@ -1,6 +1,7 @@
-fastapi
-uvicorn
-opencv-python-headless
-tensorflow
-gdown
-numpy
+fastapi>=0.68.0
+uvicorn>=0.15.0
+tensorflow-cpu>=2.6.0  # or tensorflow if you want GPU support
+opencv-python-headless>=4.5.0
+gdown>=4.4.0
+numpy>=1.21.0
+python-multipart
