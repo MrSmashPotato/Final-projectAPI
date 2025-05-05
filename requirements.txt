@@ -1,7 +1,6 @@
 fastapi
 uvicorn
-numpy
-opencv-python
+opencv-python-headless
 tensorflow
 gdown
-python-multipart
+numpy
