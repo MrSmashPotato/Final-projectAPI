@@ -65,13 +65,13 @@ def preprocess_image_dual_channel(image_path: str) -> Optional[np.ndarray]:
         hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
         mask = cv2.inRange(hsv, (35, 40, 40), (85, 255, 255))
         img_no_green = cv2.bitwise_and(img, img, mask=cv2.bitwise_not(mask))
-        gray = cv2.cvtColor(img_no_green, cv2.COLOR_BGR2GRAY)
+        gray = cv2.cvtColor(img_no_green, cv2.COLOR_BGR2GRAY)  # Must be before line 75
 
         # Channel 2: Edge detection
         edges = cv2.Canny(gray, 50, 150)
-        edges = cv2.dilate(edges, np.ones((3, 3), iterations=1)
+        edges = cv2.dilate(edges, np.ones((3, 3)), iterations=1)  # Fixed np.ones syntax
 
-        # Resize and normalize
+        # Resize and normalize (LINE 75)
         gray_resized = cv2.resize(gray, (224, 224))
         edges_resized = cv2.resize(edges, (224, 224))
         stacked = np.stack((gray_resized, edges_resized), axis=-1).astype('float32') / 255.0
